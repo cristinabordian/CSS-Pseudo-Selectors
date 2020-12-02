@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery with CSS - pseudo calsses /elements</title>
+    <style>
+        body {
+            margin: 0;
+            /* background-color: #333; */
+            background-image: url(https://cdn.pixabay.com/photo/2017/02/14/09/03/wood-2065369__480.jpg);
+            background-size: cover;
+        }
+
+
+        .title {
+            color: black;
+            text-align: center;
+            margin-bottom: 100px;
+            padding: 20px;
+            background-color: #fff7;
+        }
+
+        .photos {
+            text-align: center;
+
+        }
+
+        img {
+            width: 280px;
+            margin-left: -167px;
+            margin-right: -167px;
+
+            border: 5px solid white;
+            padding: 20px;
+            background-color: #000b;
+            box-shadow: 0 0 17px 3px black;
+
+            transition: 10s;
+        }
+
+        img:nth-child(5) {
+            transform: translateX(150px) rotate(45deg);
+        }
+        img:nth-child(4) {
+            transform: translateX(-150px) rotate(25deg);
+        }
+        img:nth-child(3) {
+            transform: translateY(-150px) rotate(-45deg);
+        }
+        img:nth-child(2) {
+            transform: translateY(150px) rotate(15deg);
+        }
+        img:nth-child(1) {
+            transform: translateY(190px) rotate(-35deg);
+        }
+
+       img:target {
+           transform: rotate(0) scale(2);
+
+           position: relative;
+           z-index: 1;
+       }
+
+       /* Observatie: daca las spatiu intre scale si valoarea lui scale (vezi jos), pseudo-selector nu functioneaza  */
+
+        /* img:target {
+            transform: rotate(0) scale (2);
+        } */
+
+        /* Intrebare: De ce cand adagam a href si id la toate imaginile, ele se aranjeaza in pozitia originala, ignora instructiunile de la img nth child? */
+
+       
+    </style>
+    
+</head>
+<body>
+    <h1 class="title">Gallery</h1>
+    <div class="photos">
+
+        
+          <img id="first" src="https://i.picsum.photos/id/582/400/500.jpg?hmac=-G0stT2tGFHhkUjx70oZpLxpxwJRmNFwtBmBjWCMBkI" alt="">
+         <img id="second" src="https://i.picsum.photos/id/612/400/500.jpg?hmac=ly4zdjsRqetzlGk6KZBCRmEnWpf2bMr5zjcExFHof0A" alt="">
+        
+
+        <a href="#third">
+           <img id="third" src="https://i.picsum.photos/id/901/400/500.jpg?hmac=9EvJJTNZPt1kgek5RVClpco8bSHmt0DF-NTHlfNAPsI" alt="">
+       </a>
+
+        <a href="#fourth">
+           <img id="fourth" src="https://i.picsum.photos/id/347/400/500.jpg?hmac=3mFcoDfqGMBl6YUcoGz4eIatMbwvj-SaRSslv_9Pkzs" alt="">
+       </a>
+
+        <a href="#fifth">
+          <img id="fifth" src="https://i.picsum.photos/id/829/400/500.jpg?hmac=2JRpA80kRpVV7qhg25CD-V-pD5fM_3g-Klya04rHMas" alt="">
+      </a>
+
+    </div>
+</body>
+</html>
